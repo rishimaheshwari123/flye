@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Tax Calculator</title>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="sub-container">
+            <form>
+                <div class="input-container">
+                    <span>Enter gross annual income</span>
+                    <div class="query-popup" onclick="querypopup()" style="margin-left: 2%;">
+                        <div class="icons"><span id="icon">?</span></div>
+                        <span class="query-popuptext" id="query-Popup">Gross annual income is your total salary before deductions</span>
+                    </div>
+                
+                    <div class="input-field">
+                        <input type="text" id="grossincome" placeholder="Enter gross annual income">
+                        <span id="last" onclick="warningpopup()">
+                            <span class="icons" onclick="warningpopup()"><span id="icon">!</span></span>
+                        </span>
+                        <div class="warning-popup" style="display: none;">
+                            <div class="icons" style="margin-left: 2%;" onclick="warningpopup()">
+                                <span id="warning-icon">?</span>
+                            </div>
+                            <span class="warning-popuptext" id="warning-Popup">Please enter a number</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+                <div class="input-container">
+                    <span>Enter extra income</span>
+                    <div class="query-popup" onclick="querypopup1()" style="margin-left: 2%;">
+                        <div class="icons"><span id="icon">?</span></div>
+                        <span class="query-popuptext" id="query-Popup1">Extra income is your extra source of income before deductions</span>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" id="extraincome" placeholder="Enter extra income">
+                        <div class="warning-popup" onclick="warningpopup1()" style="display: none;">
+                            <div class="icons"><span id="icon">?</span></div>
+                            <span class="warning-popuptext" id="warning-Popup1">Please enter number</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <span>Enter age group</span>
+                    <div class="query-popup" onclick="querypopup2()" style="margin-left: 2%;">
+                        <div class="icons"><span id="icon">?</span></div>
+                        <span class="query-popuptext" id="query-Popup2">Select your age group</span>
+                    </div>
+
+                    <div class="input-field">
+                        <select id="agegroup" style="width: 100%;">
+                            <option value="0"></option>
+                            <option value="1">&lt; 40</option>
+                            <option value="2">&ge; 40 & &lt; 60</option>
+                            <option value="3">&ge; 60</option>
+                        </select>
+                        <i class='fa fa-warning' style="display: none;"></i>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <span>Enter total applicable deductions</span>
+                    <div class="query-popup" onclick="querypopup3()" style="margin-left: 2%;">
+                        <div class="icons"><span id="icon">?</span></div>
+                        <span class="query-popuptext" id="query-Popup3">Money deducted from the over all income</span>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="text" id="deductions" placeholder="Add total applicable deductions">
+                        <div class="warning-popup" onclick="warningpopup2()" style="display: none;">
+                            <i class='fa fa-warning'></i>
+                            <span class="warning-popuptext" id="warning-Popup2">Please enter number</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <button type="submit" onclick="taxcalculation(event)">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <h2>Your overall income will be</h2>
+        <div class="popup-content" id="popup-content"></div>
+        <p>After tax deduction</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<script src="./script.js"></script>
+
+</html>
